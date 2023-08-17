@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class RocketShip : MonoBehaviour
 {
-    // Start is called before the first frame update
+    float mainThrust = 2.0f;
+    Rigidbody myRigidbody;
+
     void Start()
     {
-        
+        myRigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -16,11 +18,11 @@ public class RocketShip : MonoBehaviour
         RocketMovement();
     }
 
-    private static void RocketMovement()
+    private void RocketMovement()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            print("flying");
+            myRigidbody.AddRelativeForce(Vector3.up * mainThrust);
         }
 
         if (Input.GetKey(KeyCode.A))
