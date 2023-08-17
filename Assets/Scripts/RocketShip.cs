@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RocketShip : MonoBehaviour
 {
-    float mainThrust = 2.0f;
+    float mainThrust = 1500.0f;
+    float rotationThrust = 100.0f;
     Rigidbody myRigidbody;
 
     void Start()
@@ -20,19 +21,21 @@ public class RocketShip : MonoBehaviour
 
     private void RocketMovement()
     {
+        float rotationSpeed = rotationThrust * Time.deltaTime;
+
         if (Input.GetKey(KeyCode.Space))
         {
-            myRigidbody.AddRelativeForce(Vector3.up * mainThrust);
+            myRigidbody.AddRelativeForce(Vector3.up * mainThrust * Time. deltaTime);
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            print("Turn Left");
+            transform.Rotate(Vector3.forward * rotationSpeed);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            print("Turn Right");
+            transform.Rotate(-Vector3.forward * rotationSpeed);
         }
     }
 }
