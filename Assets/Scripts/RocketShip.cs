@@ -6,7 +6,7 @@ public class RocketShip : MonoBehaviour
 {
     [SerializeField]float mainThrust = 1500.0f;
     [SerializeField]float rotationThrust = 100.0f;
-    
+
     Rigidbody myRigidbody;
 
     AudioSource rocketThrust;
@@ -28,6 +28,30 @@ public class RocketShip : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, 0, transform.localEulerAngles.z);
     }
     
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+            print("ok");
+            break;
+
+            case "Finish":
+            print("Success!");
+            break;
+
+            case "Fuel":
+            print("Added Fuel");
+            break;
+
+            default:
+            print("Dead!");
+            break;
+
+
+        }
+    }
+
     private void RocketMovement()
     {
         float rotationSpeed = rotationThrust * Time.deltaTime;

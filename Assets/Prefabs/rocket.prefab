@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 4917174527119557789}
   - component: {fileID: 7310240142283073284}
   - component: {fileID: 4109510440097888553}
+  - component: {fileID: 1253041141258635965}
   m_Layer: 0
   m_Name: rocket
   m_TagString: Untagged
@@ -611,8 +612,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8108399565509560725}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.28, z: 0}
+  m_LocalRotation: {x: -0, y: 0.8665709, z: -0, w: -0.4990539}
+  m_LocalPosition: {x: -0.0126091335, y: 3.28, z: 0.044718638}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -626,7 +627,7 @@ Transform:
   - {fileID: 2747949967991326037}
   - {fileID: 9162887846355121343}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 239.875, z: 0}
 --- !u!54 &4917174527119557789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -666,6 +667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa52ceeebd415c94b82fd84b672784fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainThrust: 1500
+  rotationThrust: 100
 --- !u!65 &4109510440097888553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -685,8 +688,29 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 3.8, z: 3}
-  m_Center: {x: 0, y: 0.33, z: 0}
+  m_Size: {x: 1.2, y: 1.8, z: 1.2}
+  m_Center: {x: 0, y: 1.49, z: 0}
+--- !u!65 &1253041141258635965
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8108399565509560725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.31, y: 1.88, z: 1}
+  m_Center: {x: 0, y: -0.69, z: 0}
 --- !u!1 &8234887373301872260
 GameObject:
   m_ObjectHideFlags: 0
