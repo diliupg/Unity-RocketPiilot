@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class RocketShip : MonoBehaviour
 {
-    float mainThrust = 1500.0f;
-    float rotationThrust = 100.0f;
+    [SerializeField]float mainThrust = 1500.0f;
+    [SerializeField]float rotationThrust = 100.0f;
+    
     Rigidbody myRigidbody;
 
     AudioSource rocketThrust;
